@@ -1,6 +1,6 @@
 import requests
 from langchain.embeddings.base import Embeddings
-
+# https://python.langchain.com/docs/how_to/custom_embeddings/
 # 自定义嵌入类，用于向LM Studio的API发送请求获取嵌入向量
 class LMStudioEmbeddings(Embeddings):
     def __init__(self, api_base="http://192.168.1.22:1234/v1", model_name="text-embedding-nomic-embed-text-v1.5-embedding"):
