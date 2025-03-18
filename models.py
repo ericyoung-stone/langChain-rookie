@@ -7,7 +7,7 @@ class MyOpenAIModel:
         # 从环境变量读取配置
         self.base_url = os.getenv("LLM_BASE_URL", 'http://192.168.1.22:1234/v1') or "http://192.168.1.22:1234/v1"
         self.api_key = os.getenv("LLM_API_KEY", 'test') or "test"
-        self.model = os.getenv("LLM_CHAT_MODEL", 'gemma-3-4b-it') or "gemma-3-4b-it"
+        self.model = os.getenv("LLM_CHAT_MODEL", 'deepseek-r1-distill-llama-8b') or "deepseek-r1-distill-llama-8b"
 
         self.client = OpenAI(
             base_url=self.base_url,
@@ -63,7 +63,7 @@ llm = ChatOpenAI(
                 # other params...
             )
 """
-def get_base_url_model_with_tools(base_url: str="http://192.168.1.22:1234/v1", model: str="gemma-3-4b-it") -> ChatOpenAI:
+def get_base_url_model_with_tools(base_url: str="http://192.168.1.22:1234/v1", model: str="deepseek-r1-distill-llama-8b") -> ChatOpenAI:
     llm = ChatOpenAI(
         request_timeout=None,
         openai_api_base=base_url,
